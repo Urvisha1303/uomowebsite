@@ -1,0 +1,257 @@
+{
+  "user": [
+    {
+      "id": "0e03",
+      "registerUsername": "urvisha",
+      "registerPassword": "1234",
+      "isadmin": "",
+      "registerEmail": "sdfesd@gmail.vom"
+    },
+    {
+      "id": "890b",
+      "registerUsername": "sdasfd",
+      "registerPassword": "12345",
+      "isadmin": "",
+      "registerEmail": "safsa@gmail.vom"
+    },
+    {
+      "id": "7aa7",
+      "registerUsername": "urvisha b",
+      "registerPassword": "12345",
+      "isadmin": "",
+      "registerEmail": "zdasf@gmail.com"
+    },
+    {
+      "id": "7c87",
+      "registerUsername": "fwefqw",
+      "registerPassword": "1234567890",
+      "isadmin": true,
+      "registerEmail": "safsa@gmail.vom"
+    },
+    {
+      "id": "503b",
+      "registerUsername": "komal",
+      "registerPassword": "123123",
+      "isadmin": true,
+      "registerEmail": "komal@gmail.com"
+    },
+    {
+      "id": "1065",
+      "registerUsername": "zcas",
+      "registerPassword": "11111",
+      "isadmin": true,
+      "registerEmail": "ascsas@gmail.com"
+    },
+    {
+      "id": "65f3",
+      "registerUsername": "urvisha",
+      "registerEmail": "fsfsdd@gmail.com",
+      "registerPassword": "121212",
+      "isadmin": true
+    },
+    {
+      "id": "0355",
+      "registerUsername": "urvisha",
+      "registerEmail": "sdfesd@gmail.vom",
+      "registerPassword": "1234",
+      "isadmin": true
+    },
+    {
+      "id": "ed1b",
+      "registerUsername": "urvisha",
+      "registerEmail": "sdfesd@gmail.vom",
+      "registerPassword": "1234",
+      "isadmin": true
+    },
+    {
+      "id": "6945",
+      "registerUsername": "gvch",
+      "registerEmail": "vhjv@jkbkj.vom",
+      "registerPassword": "123456",
+      "isadmin": false
+    },
+    {
+      "id": "c5a6",
+      "registerUsername": "urvisha",
+      "registerEmail": "uuu@gmnail.com",
+      "registerPassword": "11111",
+      "isadmin": true
+    },
+    {
+      "id": "6eb5",
+      "registerUsername": "ssss",
+      "registerEmail": "sss@gmnanil.com",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "f2ea",
+      "registerUsername": "zssd",
+      "registerEmail": "ssdas@gmail.com",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "209c",
+      "registerUsername": "zczas",
+      "registerEmail": "scs@gmail.vom",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "e599",
+      "registerUsername": "Afa",
+      "registerEmail": "dad@gmail.com",
+      "registerPassword": "12111",
+      "isadmin": true
+    },
+    {
+      "id": "cb70",
+      "registerUsername": "afa",
+      "registerEmail": "dad11@gmail.com",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "910f",
+      "registerUsername": "hgfh",
+      "registerEmail": "gfhdf@gmail.com",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "e504",
+      "registerUsername": "urvisha",
+      "registerEmail": "sdfesassdad@gmail.vom",
+      "registerPassword": "12121",
+      "isadmin": true
+    },
+    {
+      "id": "dba2",
+      "registerUsername": "gtrhtr",
+      "registerEmail": "sfswd@ggmail.com",
+      "registerPassword": "25346457",
+      "isadmin": true
+    },
+    {
+      "id": "daeb",
+      "registerUsername": "adgf",
+      "registerEmail": "fddgdf@dfsd.nmo",
+      "registerPassword": "11111",
+      "isadmin": true
+    },
+    {
+      "id": "4db3",
+      "registerUsername": "hhhh",
+      "registerEmail": "hhh@hmaol.obm",
+      "registerPassword": "123456",
+      "isadmin": true
+    },
+    {
+      "id": "addb",
+      "registerUsername": "fsagdg",
+      "registerEmail": "gdsgfd@dsgdfh.bon",
+      "registerPassword": "23456gy",
+      "isadmin": true
+    },
+    {
+      "id": "091a",
+      "registerUsername": "u",
+      "registerEmail": "u@gnmail.com",
+      "registerPassword": "12121",
+      "isadmin": ""
+    },
+    {
+      "id": "7011",
+      "registerUsername": "urvisha",
+      "registerEmail": "d@gmail.com",
+      "registerPassword": "456123",
+      "isadmin": ""
+    },
+    {
+      "id": "a985",
+      "registerUsername": "ssss",
+      "registerEmail": "s@gmail.com",
+      "registerPassword": "789456",
+      "isadmin": true
+    }
+  ],
+  "category": [
+    {
+      "id": "c84b",
+      "category": "saree"
+    },
+    {
+      "id": "23d9",
+      "category": "tshirt"
+    },
+    {
+      "id": "c452",
+      "category": "pant"
+    }
+  ],
+  "products": [
+    {
+      "id": "986d",
+      "ProductName": "saree slik sfdf",
+      "ProductImage": "https://lajreedesigner.com/cdn/shop/files/ShrijiAvadh-SC-130-Maroon_9_900x1350_crop_center@2x.jpg?v=1686824448",
+      "ProductPrice": "100",
+      "ProductDecription": "Slik",
+      "ProductQuantity": "10",
+      "ProductCategory": "saree"
+    },
+    {
+      "id": "91b6",
+      "ProductName": "saree",
+      "ProductImage": "https://images.jdmagicbox.com/quickquotes/images_main/coimbatore-wedding-saree-2215479811-mhs8ixib.jpg",
+      "ProductPrice": "500",
+      "ProductDecription": "banarasi",
+      "ProductQuantity": "10",
+      "ProductCategory": "saree"
+    },
+    {
+      "id": "56c1",
+      "ProductName": "saree wear",
+      "ProductImage": "https://images.jdmagicbox.com/quickquotes/images_main/coimbatore-wedding-saree-2215479811-mhs8ixib.jpg",
+      "ProductPrice": "500",
+      "ProductDecription": "cotton",
+      "ProductQuantity": "25",
+      "ProductCategory": "saree"
+    },
+    {
+      "id": "2f92",
+      "ProductName": "tshirt",
+      "ProductImage": "https://m.media-amazon.com/images/I/81oAiOv78ZL._AC_UY350_.jpg",
+      "ProductPrice": "500",
+      "ProductDecription": "mens wear",
+      "ProductQuantity": "10",
+      "ProductCategory": "tshirt"
+    }
+  ],
+  "cart": [
+    {
+      "id": "72c9",
+      "productId": "986d",
+      "quantity": 11,
+      "userid": null
+    },
+    {
+      "id": "223f",
+      "productId": "91b6",
+      "quantity": 5,
+      "userid": null
+    },
+    {
+      "id": "de0f",
+      "productId": "56c1",
+      "quantity": 1,
+      "userid": null
+    },
+    {
+      "id": "f3c8",
+      "productId": "2f92",
+      "quantity": 1,
+      "userid": null
+    }
+  ]
+}
