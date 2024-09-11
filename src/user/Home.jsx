@@ -1,6 +1,18 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
+import axios from 'axios';
 
 const Home = () => {
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+      getProduct();
+    }, []);
+  
+    const getProduct = async () => {
+      let product = await axios.get(`http://localhost:3000/products`);
+      console.log(product.data);
+      setProduct(product.data);
+    };
     return (
         <>
             <main style={{ paddingTop: 90 }}>

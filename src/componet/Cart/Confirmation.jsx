@@ -1,12 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import  { useEffect, useState } from "react";
+import { Link, useLocation} from "react-router-dom";
 
 const Confirmation = () => {
   const [subtotal, setSubTotal] = useState(0);
   const [cart, setCart] = useState([]);
-  const [shipping, setShipping] = useState('')
-  const navigate = useNavigate();
+  // const [shipping, setShipping] = useState('')
+  // const navigate = useNavigate();
   const location = useLocation();
   const {state} = location || {};
      useEffect(() => {
@@ -131,7 +131,7 @@ console.log(date);
                   <thead>
                     <tr>
                       <th>PRODUCT</th>
-                      <th>SUBTOTAL</th>
+                      <th style={{ textAlign: "start" }}>SUBTOTAL</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -152,7 +152,7 @@ console.log(date);
                 <table className="checkout-totals">
                   <tbody>
                     <tr>
-                      <th>SUBTOTAL</th>
+                      <th style={{width:"62%"}}> SUBTOTAL</th>
                       <td>${subtotal}</td>
                     </tr>
                     <tr>

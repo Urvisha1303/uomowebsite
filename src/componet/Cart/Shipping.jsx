@@ -2,12 +2,26 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const Shipping = () => {
   const [subtotal, setSubTotal] = useState(0);
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
   const [shipping, setShipping] = useState("");
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
+  const [billingDeatils, setBillingDetails] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    zipCode: "",
+    phoneNumber: "",
+  });
+
+  const [error, setError] = useState("");
   useEffect(() => {
     getCart();
     // getProduct();
@@ -15,6 +29,11 @@ const Shipping = () => {
 
   const shippingType = (e) => {
     setShipping(e.target.value);
+    setSelectedPaymentMethod(e.target.value);
+  };
+
+  const inputChange = (e) => {
+    setBillingDetails({ ...billingDeatils, [e.target.name]: e.target.value });
   };
 
   const getCart = async () => {
@@ -61,8 +80,7 @@ const Shipping = () => {
       handler: function (response) {
         alert("Payment successful!");
         console.log(response);
-        navigate("/confirm", {state: shipping})
-      }
+      },
       // ,
       // prefill: {
       //   name: "User Name",
@@ -76,11 +94,14 @@ const Shipping = () => {
       //   color: "#F37254"
       // }
     };
-    
+
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-  }
+  };
+
   
+
+
 
   return (
     <>
@@ -123,7 +144,9 @@ const Shipping = () => {
                         id="checkout_first_name"
                         placeholder="First Name"
                         type="text"
-                        
+                        name="firstName"
+                        value={billingDeatils.firstName}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_first_name">First Name</label>
                     </div>
@@ -135,7 +158,9 @@ const Shipping = () => {
                         id="checkout_last_name"
                         placeholder="Last Name"
                         type="text"
-                       
+                        name="lastName"
+                        value={billingDeatils.lastName}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_last_name required">
                         Last Name
@@ -149,6 +174,9 @@ const Shipping = () => {
                         id="checkout_company_name"
                         placeholder="Company Name (optional)"
                         type="text"
+                        name="companyName"
+                        value={billingDeatils.companyName}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_company_name">
                         Company Name (optional)
@@ -181,6 +209,9 @@ const Shipping = () => {
                               className="search-field__input form-control form-control-sm bg-lighter border-lighter"
                               placeholder="Search"
                               type="text"
+                              name="country"
+                              value={billingDeatils.country}
+                              onChange={inputChange}
                             />
                           </div>
                           <ul className="search-suggestion list-unstyled">
@@ -211,6 +242,9 @@ const Shipping = () => {
                         id="checkout_street_address"
                         placeholder="Street Address *"
                         type="text"
+                        name="address"
+                        value={billingDeatils.address}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_company_name">
                         Street Address *
@@ -231,6 +265,9 @@ const Shipping = () => {
                         id="checkout_city"
                         placeholder="Town / City *"
                         type="text"
+                        name="city"
+                        value={billingDeatils.city}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_city">Town / City *</label>
                     </div>
@@ -242,6 +279,9 @@ const Shipping = () => {
                         id="checkout_zipcode"
                         placeholder="Postcode / ZIP *"
                         type="text"
+                        name="zipCode"
+                        value={billingDeatils.zipCode}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_zipcode">Postcode / ZIP *</label>
                     </div>
@@ -264,6 +304,9 @@ const Shipping = () => {
                         id="checkout_phone"
                         placeholder="Phone *"
                         type="text"
+                        name="phoneNumber"
+                        value={billingDeatils.phoneNumber}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_phone">Phone *</label>
                     </div>
@@ -275,6 +318,9 @@ const Shipping = () => {
                         id="checkout_email"
                         placeholder="Your Mail *"
                         type="email"
+                        name="email"
+                        value={billingDeatils.email}
+                        onChange={inputChange}
                       />
                       <label htmlFor="checkout_email">Your Mail *</label>
                     </div>
@@ -398,6 +444,15 @@ const Shipping = () => {
                           in our account.
                         </span>
                       </label>
+                      {selectedPaymentMethod === "Direct bank Transfer" && (
+                        <div className="bank-details">
+                          <h4>Bank Details</h4>
+                          <p>Bank Name: ABC Bank</p>
+                          <p>Account Number: 1234567890</p>
+                          <p>IFSC Code: ABCD1234</p>
+                          <p>Account Holder: Your Company Name</p>
+                        </div>
+                      )}
                     </div>
                     <div className="form-check">
                       <input
@@ -451,12 +506,13 @@ const Shipping = () => {
                         name="checkout_payment_method"
                         value={"Paypal"}
                         onChange={shippingType}
+                        onClick={handlePayment}
                       />
                       <label
                         className="form-check-label"
                         htmlFor="checkout_payment_method_4"
                       >
-                        Paypal
+                        Credit Card / Debit Card / UPI
                         <span className="option-detail d-block">
                           Phasellus sed volutpat orci. Fusce eget lore mauris
                           vehicula elementum gravida nec dui. Aenean aliquam
@@ -475,19 +531,20 @@ const Shipping = () => {
                       .
                     </div>
                   </div>
-                  {/* <button
-                    // onClick={()=>{
-                    //   navigate("/confirm", {state: shipping})
-                    // }}
-
-                    onClick={() => {
-                      handlePayment(subtotal + 19);
-                    }}
+                  {error && (
+                    <div className="error-message">
+                      <p style={{ color: "red" }}>{error}</p>
+                    </div>
+                  )}
+                  <button
+                    type="button"
                     className="btn btn-primary btn-checkout"
+                    onClick={()=>{
+                      navigate("/confirm", { state: shipping });
+                    }}
                   >
                     PLACE ORDER
-                  </button> */}
-                  <button type="button" className="btn btn-primary btn-checkout" onClick={handlePayment}>PLACE ORDER</button>
+                  </button>
                 </div>
               </div>
             </div>

@@ -17,6 +17,7 @@ const Cart = () => {
   // })
   //   }
 
+
   const getCart = async () => {
     try {
       const cartData = await axios.get(
